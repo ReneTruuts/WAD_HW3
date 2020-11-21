@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header :cart="cart"/>
-    <router-view></router-view>
   </div>
 </template>
 
