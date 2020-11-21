@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <router-link to="/LoginPage">Login Page</router-link>
+    <router-link to="/LoginPage"></router-link>
        <LoginPage :index="index"/>
   </div>
 </template>

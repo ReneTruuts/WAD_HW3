@@ -6,6 +6,8 @@ import ItemPage from "./components/ItemPage";
 import Home from "./components/Home";
 import Item from "./models/Item";
 import Cart from "./models/Cart";
+import IndexPage from "./components/IndexPage";
+
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -14,6 +16,7 @@ Vue.use(Vuex);
 const routes = [
     {path: '/', component: Home},
     {path: '/items/:id', name: "items", component: ItemPage},
+    {path: '/IndexPage', name:'IndexPage', component: IndexPage}
 ];
 
 const router = new VueRouter({routes});

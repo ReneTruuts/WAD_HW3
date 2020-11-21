@@ -24,12 +24,12 @@
         </div>
       </nav>
     </header>
-    <section class="main-container"></section>
+
 </template>
 
 <script>
     export default {
-
+      name: 'IndexPage'
     }
 </script>
 

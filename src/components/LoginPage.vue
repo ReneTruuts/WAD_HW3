@@ -3,6 +3,7 @@
     <section id="login-container">
       <div>
         <h1>Welcome to postIt!</h1>
+        <img src="res/images/logo.png">
       </div>
       <div>
         <h4>
@@ -22,7 +23,10 @@
             <input type="password" name="password" placeholder="Password">
           </div>
           <div>
+            <router-link to="/IndexPage">
             <button class="button" type="submit" name="login">Log In</button>
+            </router-link>
+
           </div>
           <div>
             <small>
@@ -36,15 +40,77 @@
 </template>
 
 <script>
-    export default {
 
+  export default {
+
+          name: 'Home',
+              components: {
+
+          },
+          computed: {
+            items: function () {
+              return this.$store.state.items
     }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-*{
-background-color: whitesmoke ;
+* {
+  font-family: Tahoma;
+  outline: none;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: darkblue;
+  color: #263238;
+}
+
+.login-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-container {
+
+  background-size: 20% auto;
+  background-repeat: no-repeat;
+  background-position: 15px 15px;
+  min-width: 25%;
+  padding: 45px 45px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+  text-align: center;
+}
+
+#login-container form div > input {
+  padding: 8px 16px;
+  margin: 4px 0;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 4px 0;
+  color: #ffffff;
+  background-color: #0277bd;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
+  cursor: pointer;
+}
+
 </style>

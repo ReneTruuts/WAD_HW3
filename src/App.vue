@@ -29,6 +29,6 @@ export default {
 html, body {
   margin: 70px 0 0 0;
   padding: 0;
-  background-color: lightskyblue;
+  background-color: #0277bd;
 }
 </style>
