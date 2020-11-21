@@ -1,14 +1,7 @@
 <template>
-  <div class="list">
-    <div v-for="(item, index) in items" :key="index">
-        <router-link to="/LoginPage">Login Page
-        <img :src="item.image">
-        <h4>
-          <span>{{item.title}} - {{item.price}}$</span>
-        </h4>
-      </router-link>
+  <div class="login">
+    <router-link to="/LoginPage">Login Page</router-link>
        <LoginPage :index="index"/>
-    </div>
   </div>
 </template>
 
@@ -20,11 +13,6 @@ export default {
   name: 'Home',
   components: {
     LoginPage
-  },
-  computed: {
-    items: function () {
-      return this.$store.state.items
-    }
   }
 }
 </script>
