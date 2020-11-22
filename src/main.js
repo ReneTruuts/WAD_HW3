@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import Home from "./components/Home";
 import IndexPage from "./components/IndexPage";
+import Browse from "./components/Browse";
 import axios from 'axios'
 
 Vue.config.productionTip = false;
@@ -12,13 +13,15 @@ Vue.use(Vuex);
 
 const routes = [
     {path: '/', component: Home},
-    {path: '/IndexPage', name:'IndexPage', component: IndexPage}
+    {path: '/IndexPage', name:'IndexPage', component: IndexPage},
+    { path: '/browse', name: "browse", component: Browse},
 ];
 
 const router = new VueRouter({routes});
 
 const store = new Vuex.Store({
     state: {
+        persons: [],
         user: [],
         posts: []
     },
@@ -28,6 +31,9 @@ const store = new Vuex.Store({
         },
         setPosts(state, posts) {
             state.posts = posts
+        },
+        SET_PERSONS(state, persons) {
+            state.persons = persons
         },
     },
 
@@ -43,6 +49,12 @@ const store = new Vuex.Store({
                 .get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/posts')
                 .then(response => {
                     commit('setPosts', response.data)
+                })
+        },
+        getPersons({ commit }) {
+            axios.get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/profiles')
+                .then(response => {
+                    commit('SET_PERSONS', response.data)
                 })
         }
     },

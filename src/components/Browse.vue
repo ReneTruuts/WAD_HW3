@@ -1,20 +1,76 @@
 <template>
- <div>
-   <h1>Empty page for now </h1>
+<div class="list">
+<Navbar goNext="Index" />
+<section class="main-container">
+  <div class="personArea">
+    <h1> Browse users </h1>
+    <ul v-for="(item, index) in persons" :key="index">
+      <div class="person">
+        <img :src="item.avatar" id="avatar" />
+        <h1>{{ item.firstname }} {{ item.lastname }}</h1>
+        <FollowButton />
+      </div>
+    </ul>
   </div>
+</section>
+</div>
 </template>
 
 <script>
 
+import FollowButton from "../components/Follow";
+export default {
+  name: "Browse",
+  components: {
+    FollowButton,
+  },
+  computed: {
+    persons() {
+      return this.$store.state.persons
+    }
+  },
+  mounted() {
+    this.$store.dispatch("getPersons");
+  }
+};
 </script>
 
-<style>
-* {
-  font-family: 'Open Sans', sans-serif;
+
+<style scoped>
+.main-container {
+  width: 50%;
+  min-height: 100%;
+  margin: auto auto;
+  padding: 90px 15px 15px 15px;
+  background-color: #ffffff;
 }
-html, body {
-  margin: 70px 0 0 0;
+.personArea {
+  align-content: center;
+}
+ul {
+  list-style-type: none;
   padding: 0;
-  background-color: #0277bd;
+  margin: 0;
+}
+
+.person {
+  margin: 5%;
+  padding: 5%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+  border-radius: 5%;
+}
+
+
+#avatar {
+  object-fit: cover;
+  object-position: center top;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+h1 {
+  text-align: center;
 }
 </style>
