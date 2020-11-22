@@ -23,7 +23,7 @@ const store = new Vuex.Store({
     state: {
         user: [],
         posts: [],
-        persons: []
+        people: []
     },
     mutations: {
         setUser(state, user) {
@@ -32,13 +32,13 @@ const store = new Vuex.Store({
         setPosts(state, posts) {
             state.posts = posts
         },
-        setPersons(state, persons) {
-            state.persons = persons
+        setPeople(state, people) {
+            state.people = people
         },
     },
 
     actions: {
-        getUser({ commit }) {
+        getUser({commit}) {
             axios.get('https://private-anon-609e31d177-wad20postit.apiary-mock.com/users/1')
                 .then(response => {
                     commit('setUser', response.data)
@@ -51,10 +51,10 @@ const store = new Vuex.Store({
                     commit('setPosts', response.data)
                 })
         },
-        getPersons({ commit }) {
+        getPeople({ commit }) {
             axios.get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/profiles')
                 .then(response => {
-                    commit('setPersons', response.data)
+                    commit('setPeople', response.data)
                 })
         }
     },

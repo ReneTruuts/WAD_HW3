@@ -18,7 +18,7 @@
           <p id="user-email">{{user.email}}</p>
           <p class="separator"></p>
           <p>
-            <router-link to="/Browse.vue"> Browse </router-link>
+            <router-link to="/Browse"> Browse </router-link>
           </p>
           <span class="separator"></span>
           <p>
