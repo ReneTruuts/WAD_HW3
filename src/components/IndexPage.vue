@@ -45,7 +45,7 @@ export default {
   computed: {
     posts: function () {
       return this.$store.state.posts;
-    },
+    }
   },
   filters: {
     Date: function (value) {
