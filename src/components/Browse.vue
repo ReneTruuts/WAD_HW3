@@ -26,7 +26,7 @@ export default {
     Follow
   },
   computed: {
-    epople() {
+    people() {
       return this.$store.state.people
     }
   },
