@@ -8,7 +8,7 @@
       <div class="person">
         <img :src="item.avatar" id="avatar" />
         <h1>{{ item.firstname }} {{ item.lastname }}</h1>
-        <FollowButton />
+        <Follow />
       </div>
     </ul>
   </div>
@@ -18,11 +18,11 @@
 
 <script>
 
-import FollowButton from "../components/Follow";
+import Follow from "@/components/Follow";
 export default {
   name: "Browse",
   components: {
-    FollowButton,
+    Follow,
   },
   computed: {
     persons() {
