@@ -28,7 +28,7 @@ a {
 }
 
 #login-container {
-    background-image: url(../images/logo.png);
+    background-image: url(../../src/assets/postitLogo.png);
     background-size: 20% auto;
     background-repeat: no-repeat;
     background-position: 15px 15px;
@@ -186,7 +186,7 @@ nav div.avatar-container {
 }
 
 .like-button {
-    background-image: url(../images/like.png);
+    background-image: url(../../src/assets/like.png);
     background-size: 15px;
     background-repeat: no-repeat;
     background-position: 5px center;

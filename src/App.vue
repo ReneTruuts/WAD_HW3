@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <Header :cart="cart"/>
+    <Header :index="index"/>
     <router-view></router-view>
+    <LoginPage :index="index"/>
   </div>
 </template>
 

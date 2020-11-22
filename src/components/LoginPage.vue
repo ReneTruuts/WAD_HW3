@@ -2,8 +2,9 @@
   <section class="login-page">
     <section id="login-container">
       <div>
-        <h1>Welcome to postIt!</h1>
-        <img src="res/images/logo.png">
+
+        <img src="../assets/postitLogo.png" id="postitpic">
+       <h1 id="heading1">Welcome to postIt!</h1>
       </div>
       <div>
         <h4>
@@ -23,9 +24,8 @@
             <input type="password" name="password" placeholder="Password">
           </div>
           <div>
-            <router-link to="/IndexPage">
-              <button class="button" type="submit" name="login">Log In</button>
-            </router-link>
+
+            <button @click="$router.push('IndexPage')">Log In</button>
 
           </div>
           <div>
@@ -58,6 +58,7 @@ export default {
   font-family: Tahoma;
   outline: none;
 }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -100,5 +101,9 @@ button {
 button:hover {
   box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
   cursor: pointer;
+}
+#postitpic {
+  width: 15%;
+
 }
 </style>
