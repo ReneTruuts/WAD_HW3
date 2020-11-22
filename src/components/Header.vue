@@ -9,20 +9,17 @@
       <div class="search-container">
         <input type="text" name="search"><button type="button">Search</button>
       </div>
-      <div class="avatar-container">
-        <img class="avatar" src="JohnDoe.jpeg">
-        <div class="drop-down-container">
-          <span id="user-name">John Doe</span>
-          <span id="user-email"></span>
+      <div class="profile-pic">
+          <img :src="user.avatar" alt="postIt" @click="show = !show">
+      </div>
+      <div class="drop-down-container" v-show="show">
+          <span id="user-name">{{user.firstname}} {{user.lastname}}</span>
+          <span id="user-email">{{user.email}}</span>            
+          <span class="separator"></span> 
+          <span v-if=isNextBrowse><router-link to="/browse" >Browse</router-link></span>
+          <span v-else><router-link to="/index" >Index</router-link></span>
           <span class="separator"></span>
-          <span>
-              <a href="browse.html">Browse</a>
-            </span>
-          <span class="separator"></span>
-          <span>
-              <a href="login.html">Log Out</a>
-            </span>
-        </div>
+          <router-link to="/"><span>Log out</span></router-link>
       </div>
     </nav>
   </header>
@@ -32,11 +29,26 @@
 <script>
 export default {
   name: 'Header',
+  props: {
+      goNext: String
+  },
+    data: function(){
+        return{
+            show: false
+        }
+    },
   computed: {
-    cart: function () {
-      return this.$store.state.cart
+    isNextBrowse: function(){
+        if(this.goNext == "Browse") return true
+        else return false
+    },
+    user() {
+        return this.$store.state.user
     }
-  }
+    },
+    mounted() {
+        this.$store.dispatch("getUser");
+    }
 }
 
 </script>
