@@ -14,16 +14,16 @@ Vue.use(Vuex);
 const routes = [
     {path: '/', component: Home},
     {path: '/IndexPage', name:'IndexPage', component: IndexPage},
-    { path: '/browse', name: "browse", component: Browse},
+    { path: '/Browse', name: "Browse", component: Browse}
 ];
 
 const router = new VueRouter({routes});
 
 const store = new Vuex.Store({
     state: {
-        persons: [],
         user: [],
-        posts: []
+        posts: [],
+        persons: []
     },
     mutations: {
         setUser(state, user) {
@@ -32,7 +32,7 @@ const store = new Vuex.Store({
         setPosts(state, posts) {
             state.posts = posts
         },
-        SET_PERSONS(state, persons) {
+        setPersons(state, persons) {
             state.persons = persons
         },
     },
@@ -54,7 +54,7 @@ const store = new Vuex.Store({
         getPersons({ commit }) {
             axios.get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/profiles')
                 .then(response => {
-                    commit('SET_PERSONS', response.data)
+                    commit('setPersons', response.data)
                 })
         }
     },
