@@ -42,7 +42,7 @@ export default {
   width: 50%;
   min-height: 100%;
   margin: auto auto;
-  padding: 90px 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   background-color: #ffffff;
 }
 .personArea {
