@@ -9,17 +9,22 @@
       <div class="search-container">
         <input type="text" name="search"><button type="button">Search</button>
       </div>
-      <div class="profile-pic">
-          <img :src="user.avatar" alt="postIt" @click="show = !show">
-      </div>
-      <div class="drop-down-container" v-show="show">
-          <span id="user-name">{{user.firstname}} {{user.lastname}}</span>
-          <span id="user-email">{{user.email}}</span>            
-          <span class="separator"></span> 
-          <span v-if=isNextBrowse><router-link to="/browse" >Browse</router-link></span>
-          <span v-else><router-link to="/index" >Index</router-link></span>
+      <div class="avatar-container">
+        <div class="avatar">
+          <img :src="user.avatar" alt="postIt" @click="down = !down">
+        </div>
+        <div class="dropdown" v-show="down">
+          <p id="user-name">{{user.firstname}} {{user.lastname}}</p> 
+          <p id="user-email">{{user.email}}</p>
+          <p class="separator"></p>
+          <p>
+            <router-link to="/Browse.vue"> Browse </router-link>
+          </p>
           <span class="separator"></span>
-          <router-link to="/"><span>Log out</span></router-link>
+          <p>
+              <router-link to="/">Log out</router-link>
+          </p>
+        </div>
       </div>
     </nav>
   </header>
@@ -28,27 +33,20 @@
 
 <script>
 export default {
-  name: 'Header',
-  props: {
-      goNext: String
+  name: 'Header',    
+  data: function(){
+    return{
+      down: false
+    }
   },
-    data: function(){
-        return{
-            show: false
-        }
-    },
   computed: {
-    isNextBrowse: function(){
-        if(this.goNext == "Browse") return true
-        else return false
-    },
     user() {
         return this.$store.state.user
     }
-    },
-    mounted() {
-        this.$store.dispatch("getUser");
-    }
+  },
+  mounted() {
+    this.$store.dispatch("getUser");
+  }
 }
 
 </script>
@@ -126,9 +124,23 @@ nav div.search-container > button {
 }
 
 nav div.avatar-container {
-  margin-right: 15px;
-  text-align: right;
+    margin-right: 15px;
+    text-align: right;
+    position: relative;
+    display: inline-block;
 }
+.avatar {
+    margin-right: 15px;
+    text-align: right;
+}
+.dropdown {
+    position: absolute;
+    background-color: white;
+    right: 0px;
+    z-index: 1;
+    height: initial;
+    padding: 0;
+  }
 button {
   padding: 8px 16px;
   margin: 4px 0;
