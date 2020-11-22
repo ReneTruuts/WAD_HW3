@@ -44,17 +44,17 @@ const store = new Vuex.Store({
                     commit('setUser', response.data)
                 })
         },
+        getPeople({ commit }) {
+            axios.get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/profiles')
+                .then(response => {
+                    commit('setPeople', response.data)
+                })
+        },
         getPosts({commit}) {
             axios
                 .get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/posts')
                 .then(response => {
                     commit('setPosts', response.data)
-                })
-        },
-        getPeople({ commit }) {
-            axios.get('https://private-anon-1a5282cbfb-wad20postit.apiary-mock.com/profiles')
-                .then(response => {
-                    commit('setPeople', response.data)
                 })
         }
     },
