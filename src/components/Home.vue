@@ -1,14 +1,12 @@
 <template>
   <div class="login">
     <router-link to="/LoginPage"></router-link>
-       <LoginPage :index="index"/>
+    <LoginPage :index="index"/>
   </div>
 </template>
 
 <script>
-
 import LoginPage from "./LoginPage";
-
 export default {
   name: 'Home',
   components: {
@@ -24,7 +22,6 @@ export default {
   flex-direction: row;
   justify-items: center;
 }
-
 .list > div {
   margin: 20px;
   padding: 20px;
@@ -34,16 +31,13 @@ export default {
   border-radius: 4px;
   box-shadow: 2px 2px 4px 0px #a5a5a5;;
 }
-
 .list > div img {
   height: 100px;
 }
-
 .list > div span {
   color: #1a1a1a;
   text-decoration: none;
 }
-
 .list > div span:hover {
   color: #ff5f52;
   text-decoration: underline;

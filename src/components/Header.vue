@@ -27,43 +27,35 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 header {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1;
 }
-
 header:hover {
   box-shadow: 0 -20px 30px #4d4d4d;
 }
-
 nav {
   display: flex;
   background-color: #ffffff;
   align-items: center;
 }
-
 nav div {
   height: 70px;
   flex-grow: 4;
   padding: 10px 30px;
 }
-
 nav div.logo-container img {
   height: 100%;
 }
-
 nav div.cart-container {
   text-align: right;
 }
-
 nav div.cart-container img {
   height: 50px;
   margin-top: 10px;
 }
-
 nav div.cart-container span {
   position: absolute;
   display: block;
@@ -79,5 +71,4 @@ nav div.cart-container span {
   line-height: 25px;
   border-radius: 100%;
 }
-
 </style>

@@ -24,7 +24,7 @@
           </div>
           <div>
             <router-link to="/IndexPage">
-            <button class="button" type="submit" name="login">Log In</button>
+              <button class="button" type="submit" name="login">Log In</button>
             </router-link>
 
           </div>
@@ -40,16 +40,13 @@
 </template>
 
 <script>
-
-  export default {
-
-          name: 'Home',
-              components: {
-
-          },
-          computed: {
-            items: function () {
-              return this.$store.state.items
+export default {
+  name: 'Home',
+  components: {
+  },
+  computed: {
+    items: function () {
+      return this.$store.state.items
     }
   }
 }
@@ -61,19 +58,16 @@
   font-family: Tahoma;
   outline: none;
 }
-
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
-
 body {
   background-color: darkblue;
   color: #263238;
 }
-
 .login-page {
   width: 100%;
   height: 100%;
@@ -81,9 +75,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 #login-container {
-
   background-size: 20% auto;
   background-repeat: no-repeat;
   background-position: 15px 15px;
@@ -93,12 +85,10 @@ body {
   box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
   text-align: center;
 }
-
 #login-container form div > input {
   padding: 8px 16px;
   margin: 4px 0;
 }
-
 button {
   padding: 8px 16px;
   margin: 4px 0;
@@ -107,10 +97,8 @@ button {
   border: none;
   border-radius: 4px;
 }
-
 button:hover {
   box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
   cursor: pointer;
 }
-
 </style>
