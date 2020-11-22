@@ -1,44 +1,42 @@
 <template>
-<div class="list">
-  <Header />
-  <section class="main-container">
-    <div class="personArea">
-      <h1> Browse users </h1>
-      <ul v-for="(item, index) in persons" :key="index">
-      <div class="person">
-        <img :src="item.avatar" id="avatar" />
-        <h1>{{ item.firstname }} {{ item.lastname }}</h1>
-        <FollowButton />
+  <div class="list">
+    <Header goNext="Index" />
+    <section class="main-container">
+      <div class="personArea">
+        <h1> Browse users </h1>
+        <ul v-for="(item, index) in people" :key="index">
+          <div class="person">
+            <img :src="item.avatar" id="avatar" />
+            <h1>{{ item.firstname }} {{ item.lastname }}</h1>
+            <Follow/>
+          </div>
+        </ul>
       </div>
-    </ul>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
 </template>
 
 <script>
-
 import Header from "@/components/Header";
-import FollowButton from "@/components/Follow";
-
+import Follow from "@/components/Follow";
 export default {
   name: "Browse",
   components: {
     Header,
-    FollowButton,
+    Follow
   },
   computed: {
-    persons() { 
-      return this.$store.state.persons
+    epople() {
+      return this.$store.state.people
     }
   },
   mounted() {
-    this.$store.dispatch("getPersons");
+    this.$store.dispatch("getPeople");
   }
 };
 </script>
 
-
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main-container {
   width: 50%;
@@ -69,7 +67,7 @@ ul {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  padding: 100 px;
+  padding: 100px;
 }
 
 #avatar {
