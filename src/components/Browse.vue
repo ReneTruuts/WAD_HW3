@@ -1,21 +1,11 @@
 <template>
-  <div id="app">
-
-    <router-view></router-view>
-    <LoginPage :index="index"/>
+ <div>
+   <h1>Empty page for now </h1>
   </div>
 </template>
 
 <script>
 
-export default {
-  name: 'app',
-  methods: {
-  },
-  components: {
-
-  }
-}
 </script>
 
 <style>

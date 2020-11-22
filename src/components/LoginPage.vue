@@ -2,7 +2,6 @@
   <section class="login-page">
     <section id="login-container">
       <div>
-
         <img src="../assets/postitLogo.png" id="postitpic">
        <h1 id="heading1">Welcome to postIt!</h1>
       </div>

@@ -16,11 +16,11 @@
           <span id="user-email"></span>
           <span class="separator"></span>
           <span>
-              <a href="browse.html">Browse</a>
+              <router-link to="/Browse.vue"> Browse </router-link>
             </span>
           <span class="separator"></span>
           <span>
-              <a href="login.html">Log Out</a>
+              <router-link to="/">Log out</router-link>
             </span>
         </div>
       </div>
@@ -31,12 +31,7 @@
 
 <script>
 export default {
-  name: 'Header',
-  computed: {
-    cart: function () {
-      return this.$store.state.cart
-    }
-  }
+
 }
 
 </script>
