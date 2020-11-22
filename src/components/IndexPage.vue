@@ -4,8 +4,8 @@
     <section class="main-container">
       <ul v-for="(item, index) in posts" :key="index">
         <div class="post">
-          <div id="postheader">
-            <img :src="item.author.avatar" id="postavatar" />
+          <div class="post-author">
+            <img :src="item.author.avatar" id="postavatar">
             <h3 id="author">
               {{ item.author.firstname }} {{ item.author.lastname }}
             </h3>
@@ -73,61 +73,40 @@ export default {
   width: 50%;
   min-height: 100%;
   margin: auto auto;
-  padding: 90px 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   background-color: #ffffff;
 }
-ul > div {
+.post {
   width: 90%;
-  margin: 15px;
-  padding: 3%;
+  margin: 0px;
+  padding: 2%;
   box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
-  border-radius: 5%;
+  border-radius: 2%;
 }
+.post-author {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.post-author h5 {
+    float: right;
+    color: grey;
+}
+
+#postavatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: top;
+  margin: 5px;
+}
+
 #postmedia {
   width: 100%;
 }
 video {
   width: 100%;
 }
-#postheader {
-  display: inline-block;
-}
 
-#author {
-  display: inline-block;
-  padding-left: 5%;
-}
-#time {
-  float: left;
-}
-
-#menu > form {
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-#menu > form > ul > li {
-  margin: 0;
-  list-style-type: none;
-  width: 100%;
-  padding: 5px;
-  border-top: 1px solid grey;
-  float: left;
-}
-
-.personArea > div {
-  margin: 5%;
-  padding: 5%;
-  text-align: center;
-  border-radius: 5%;
-}
-#postavatar {
-  object-fit: cover;
-  object-position: center top;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  padding: 100px;
-}
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <div class="list">
-    <Header goNext="Index" />
+  <div class="posts">
+    <Header />
     <section class="main-container">
       <div class="personArea">
         <h1> Browse users </h1>
         <ul v-for="(item, index) in people" :key="index">
-          <div class="person">
-            <img :src="item.avatar" id="avatar" />
+          <div class="profile">
+            <img :src="item.avatar" id="picture" />
             <h1>{{ item.firstname }} {{ item.lastname }}</h1>
             <Follow/>
           </div>
@@ -26,7 +26,7 @@ export default {
     Follow
   },
   computed: {
-    epople() {
+    people() {
       return this.$store.state.people
     }
   },
@@ -49,40 +49,29 @@ export default {
   align-content: center;
 }
 ul {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
 }
 
-.person {
+.profile {
   margin: 5%;
-  padding: 5%;
+  padding: 10%;
   text-align: center;
   box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
   border-radius: 5%;
 }
-#postavatar {
-  object-fit: cover;
-  object-position: center top;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  padding: 100px;
-}
-
-#avatar {
+#picture {
   object-fit: cover;
   object-position: center top;
   height: 200px;
   width: 200px;
   border-radius: 50%;
-}
-
-.postmedia {
-  width: max-content;
+  padding: 10px;
 }
 
 h1 {
   text-align: center;
+  text-shadow: 1px 1px 2px #0277bd ;
 }
 </style>

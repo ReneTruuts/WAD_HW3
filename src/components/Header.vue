@@ -18,17 +18,19 @@
           <p id="user-email">{{user.email}}</p>
           <p class="separator"></p>
           <p>
-            <router-link to="/Browse"> Browse </router-link>
+            <router-link to="/IndexPage" > Index </router-link>
+          </p>
+          <p>
+            <router-link to="/Browse" > Browse </router-link>
           </p>
           <span class="separator"></span>
           <p>
-              <router-link to="/">Log out</router-link>
+            <router-link to="/">Log out</router-link>
           </p>
         </div>
       </div>
     </nav>
   </header>
-
 </template>
 
 <script>
@@ -38,7 +40,7 @@ export default {
     return{
       down: false
     }
-  },
+  }, 
   computed: {
     user() {
         return this.$store.state.user
@@ -56,32 +58,13 @@ export default {
 * {
   font-family: 'Tahoma';
   outline: none;
-}
+} 
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  background-color: #0277bd;
-  color: #263238;
-}
-
-a {
-  color: #40c4ff;
-}
 header {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1;
-}
-
-header:hover {
-  box-shadow: 0 -20px 30px #4d4d4d;
 }
 
 nav {
@@ -130,8 +113,7 @@ nav div.avatar-container {
     display: inline-block;
 }
 .avatar {
-    margin-right: 15px;
-    text-align: right;
+  padding: 0px;
 }
 .dropdown {
     position: absolute;
@@ -139,7 +121,7 @@ nav div.avatar-container {
     right: 0px;
     z-index: 1;
     height: initial;
-    padding: 0;
+    padding: 10px;
   }
 button {
   padding: 8px 16px;
@@ -154,7 +136,5 @@ button:hover {
   box-shadow: 0 0 5px rgba(38, 50, 56, 0.7);
   cursor: pointer;
 }
-#postitlogo {
 
-}
 </style>
